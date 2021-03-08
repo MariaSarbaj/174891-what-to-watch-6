@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SmallMovieCard from "../small-movie-card/small-movie-card";
-import {FILMS} from "../../mocks/mocks";
+import PropTypes from 'prop-types';
 
-const PageContent = () => {
+const PageContent = (props) => {
+  const [] = useState([]);
+  const {films} = props;
 
   return (
     <div className="page-content">
@@ -44,10 +46,10 @@ const PageContent = () => {
 
         <div className="catalog__movies-list">
           {
-            FILMS.map((film, index) => <SmallMovieCard
+            films.map((film, index) => <SmallMovieCard
               key={film + index}
               title={film.title}
-              img={film.img}
+              posterImage={film.poster_image}
             />)}
         </div>
 
@@ -71,6 +73,14 @@ const PageContent = () => {
       </footer>
     </div>
   );
+};
+
+PageContent.propTypes = {
+  films: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    posterImage: PropTypes.string.isRequired
+  })).isRequired,
 };
 
 export default PageContent;
