@@ -23,7 +23,9 @@ const App = (props) => {
           </Route>
 
           <Route exact path="/mylist">
-            <MyList />
+            <MyList
+              films = {films}
+            />
           </Route>
 
           <Route exact path="/films/:id/review" component={AddReview} />

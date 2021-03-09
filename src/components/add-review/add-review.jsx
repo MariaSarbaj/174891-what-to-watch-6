@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import AddReviewForm from '../add-review-form/add-review-form';
+import AddReviewForm from "../add-review-form/add-review-form";
 
 const AddReview = () => {
   return (
@@ -45,7 +45,7 @@ const AddReview = () => {
       </div>
 
       <div className="add-review">
-        {<AddReviewForm />}
+        <AddReviewForm />
       </div>
 
     </section>

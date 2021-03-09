@@ -4,7 +4,7 @@ import PageContent from "../page-content/page-content";
 import PropTypes from "prop-types";
 
 const Main = (props) => {
-  const {title, genre, year} = props;
+  const {title, genre, year, films} = props;
 
   return (
     <>
@@ -12,6 +12,7 @@ const Main = (props) => {
         title = {title}
         genre = {genre}
         year = {year}
+        films = {films}
       />
       <PageContent />
     </>
@@ -21,7 +22,8 @@ const Main = (props) => {
 Main.propTypes = {
   title: PropTypes.string.isRequired,
   genre: PropTypes.string.isRequired,
-  year: PropTypes.string.isRequired
+  year: PropTypes.string.isRequired,
+  films: PropTypes.array.isRequired
 };
 
 export default Main;
