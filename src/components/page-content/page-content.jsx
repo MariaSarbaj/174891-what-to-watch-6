@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SmallMovieCard from "../small-movie-card/small-movie-card";
-import {FILMS} from "../../mocks/mocks";
+import {FILMS} from "../../mocks/films";
 
 const PageContent = () => {
+  const [userChoice, setUserChoice] = useState(``);
 
   return (
     <div className="page-content">
@@ -46,8 +47,13 @@ const PageContent = () => {
           {
             FILMS.map((film, index) => <SmallMovieCard
               key={film + index}
-              title={film.title}
-              img={film.img}
+              id={film.id}
+              name={film.name}
+              posterImage={film.poster_image}
+              defaultValue={userChoice}
+              onHover={({target}) => {
+                setUserChoice(target.id);
+              }}
             />)}
         </div>
 
@@ -74,4 +80,3 @@ const PageContent = () => {
 };
 
 export default PageContent;
-

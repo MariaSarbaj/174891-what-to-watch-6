@@ -3,23 +3,23 @@ import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 
 const SmallMovieCard = (props) => {
-  const {title, img} = props;
 
   return (
-    <article className="small-movie-card catalog__movies-card">
+    <article className="small-movie-card catalog__movies-card" id={props.id}>
       <div className="small-movie-card__image">
-        <img src={img} alt={title} width="280" height="175"/>
+        <img src={props.posterImage} alt={props.name} width="280" height="175"/>
       </div>
       <h3 className="small-movie-card__title">
-        <Link className="small-movie-card__link" to="/films/:id?">{title}</Link>
+        <Link className="small-movie-card__link" to="/films/:id?">{props.name}</Link>
       </h3>
     </article>
   );
 };
 
 SmallMovieCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired
+  id: PropTypes.number.isRequired,
+  posterImage: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default SmallMovieCard;
