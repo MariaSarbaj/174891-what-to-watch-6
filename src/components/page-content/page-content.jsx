@@ -3,7 +3,7 @@ import SmallMovieCard from "../small-movie-card/small-movie-card";
 import {FILMS} from "../../mocks/films";
 
 const PageContent = () => {
-  const [userChoice, setUserChoice] = useState(0);
+  const [userChoice, setUserChoice] = useState(``);
 
   return (
     <div className="page-content">
@@ -50,6 +50,7 @@ const PageContent = () => {
               id={film.id}
               name={film.name}
               posterImage={film.poster_image}
+              defaultValue={userChoice}
               onHover={({target}) => {
                 setUserChoice(target.id);
               }}

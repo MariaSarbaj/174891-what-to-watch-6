@@ -17,7 +17,7 @@ const SmallMovieCard = (props) => {
 };
 
 SmallMovieCard.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   posterImage: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
